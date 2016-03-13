@@ -1,0 +1,20 @@
+<template name="login">
+    <div class="login-box">
+      <div class="login-logo">
+        <a href="/">
+          <img src="/images/logo.png"><hr/>
+        </a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        {{#if loginWarning}}
+        <div class="alert alert-error text-center">
+          {{loginWarning}}
+        </div>
+        {{/if}}
+        {{> atForm}}
+
+
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->
+</template>

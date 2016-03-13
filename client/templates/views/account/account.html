@@ -1,0 +1,54 @@
+<template name="account">
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <section class="col-lg-12 connectedSortable">
+              <!-- Custom tabs (Charts with tabs)-->
+              <div class="box">
+                <!-- Tabs within a box -->
+                <div class="box-header">
+                  <h3 class="box-title">
+                    Account Settings
+                  </h3>
+                </div>
+                <div class="box-body" style="min-height: 300px">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <form id="accountSettingsForm">
+                        <div class="form-group">
+                          <label for="txtName">Name</label>
+                          <input type="text" class="form-control" id="txtName" required placeholder="Your Name" value="{{currentUser.profile.name}}">
+                        </div>
+                        <div class="form-group">
+                          <label for="txtEmail">Email address</label>
+                          <input type="email" class="form-control" id="txtEmail" required placeholder="Email" value="{{currentUser.emails.[0].address}}">
+                        </div>
+                        <hr/>
+                        <p>To change your password, fill out the form fields below:</p>
+                        <div class="form-group">
+                          <label for="txtPassword1">Your New Password</label>
+                          <input type="password" class="form-control" id="txtPassword1">
+                        </div>
+                        <div class="form-group">
+                          <label for="txtPassword2">Your New Password (again)</label>
+                          <input type="password" class="form-control" id="txtPassword2">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+
+</template>

@@ -1,0 +1,50 @@
+<template name="moveFilesModal">
+<div class="modal fade" id="moveFilesModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Move Files To...</h4>
+      </div>
+      {{> moveFilesModalBody}}
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="moveFilesButton" class="btn btn-primary">Move</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</template>
+
+<template name="moveFilesModalBody">
+  <div class="modal-body">
+    <p>
+      <strong>Path: </strong>
+      <a href="#" class="folder-home-link">My Files</a>
+      {{#each pathStack}}
+        <a href="#" class="folder-link"> / {{name}}</a>
+      {{/each}}
+    </p>
+    <div class="table-responsive">
+      <table class="table no-margin">
+        <thead>
+          <tr>
+            <th>Folder Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#if hasNoFiles}}
+          <tr>
+            <td>This folder has no sub-folders.</td>
+          </tr>
+          {{/if}}
+          {{#each files}}
+          <tr>
+            <td><a href="#" class="folder-link"><i class="fa fa-folder"></i> {{name}}</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

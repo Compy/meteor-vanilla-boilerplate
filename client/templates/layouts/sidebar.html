@@ -1,0 +1,30 @@
+<template name="sideBar">
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="{{isActiveRoute 'dashboard'}}">
+          <a href="/">
+            <i class="fa fa-bar-chart"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        {{#if currentUser.admin}}
+        <li class="{{isActiveRoute 'admin'}}">
+          <a href="/admin">
+            <i class="fa fa-cog"></i> <span>Administration</span>
+          </a>
+        </li>
+        {{/if}}
+        <li>
+          <a href="/logout">
+            <i class="fa fa-sign-out"></i> <span>Sign Out</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+</template>
